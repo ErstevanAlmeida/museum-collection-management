@@ -13,6 +13,11 @@ Jawab:
     Kemudian, membuat fungsi pada views.py pada aplikasi main yang bertujuan untuk menyimpan data yang akan digunakan di web nanti. Selanjutnya melakukan routing kembali agar dapat memetakan fungsi yang telah dibuat. Langkah yang terakhir, adalah melakukan deployment dengan menggunakan Adaptable.
 
 2. Buatlah bagan yang berisi request client ke web aplikasi berbasis Django beserta responnya dan jelaskan pada bagan tersebut kaitan antara urls.py, views.py, models.py, dan berkas html!
+    : Client request -> urls.py -> views.py -> models.py -> Template (HMTL file) -> Response -> Client
+
+    Pertama-tama, client akan melakukan request dengan cara membuka web browser dan mengetik url aplikasinya. Kemudia Django menerima request tersebut serta menghubungkan url yang diminta dengan views yang sesuai. Hal tersebut dapat terjadi dengan menggunakan url patterns yang sudah di-assign sebelumnya di urls.py. Selanjutnya, Django akan mengarahkan request tersebut kepada views yang sesuai yang ada pada views.py. Di dalam views.py terdapat fungsi yang digunakan untuk mengelola data.
+    
+    Jika fungsi yang terdapat pada views.py memerlukan data dari database, maka kita pelru mendefinisikan terlebih dahulu struktur data setiap variabel pada models.py. Selanjutnya, beralih ke HTML Template yang digunakan untuk membuat tampilan yang akan ditampilkan. HTML Template sendiri memiliki fungsi untuk memisahkan pengerjaan UI dengan fungsi-fungsi interaksi yang ada di belakang tampilannya. Terakhir, Django akan merespons dan menggabungkan HTML Template dengan data yang ada pada views.py. Respons yang dihasilkan akan dikirim kembali ke tampilan browser pengguna.
 
 3. Jelaskan mengapa kita menggunakan virtual environment? Apakah kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment?
     : Virtual environement sangat berguna untuk mengisolasi proyek yang sedang dikerjakan. Hal ini dapat membuat kita menggunakan berbagai kebutuhan yang kita butuhkan untuk membangun sebuah proyek. Karena, terkadang setiap proyek yang kita kerjakan membutuhkan kebutuhan yang berbeda-beda antar proyeknya. Maka dari itu, kita membutuhkan virtual environment dalam membangun proyek ini.

@@ -6,10 +6,37 @@
         <title>{{ apps_name }}</title>
     </head>
     <body>
-        <h1>{{ apps_name }}</h1>
-        <h3>Name :  {{ name }}</h3>
-        <h3>NPM  :  {{ npm }}</h3>
-        <h3>Class:  {{ class }}</h3>
-
+        <h1>Welcome to DS Museum Collections</h1>
+        <h3>Name    : {{ name }}</h3>
+        <h3>NPM     : {{ npm }}</h3>
+        <h3>Class   : {{ class }}</h3>
+        <style>
+            table {
+                text-align: center;
+                width: 100%;
+            }
+        </style>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Collection</th>
+                    <th>Type</th>
+                    <th>Amount</th>
+                    <th>Year Invented</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1.</td>
+                    <td>{{ collection }}</td>
+                    <td>{{ type }}</td>
+                    <td>{{ amount }}</td>
+                    <td>{{ year }}</td>
+                    <td>{{ description }}</td>
+                </tr>
+            </tbody>
+        </table>
     </body>
 </html>
