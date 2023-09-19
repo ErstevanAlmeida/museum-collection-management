@@ -1,14 +1,12 @@
-Nama    : Erstevan Laurel Lucky Almeida
+## Nama    : Erstevan Laurel Lucky Almeida
+## NPM     : 2206082493
+## Kelas   : PBP - E
 
-NPM     : 2206082493
-
-Kelas   : PBP - E
-
-Tugas 2 : Implementasi MVT pada Django
+## Tugas 2 : Implementasi MVT pada Django
 
 Jawab:
 1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step!
-    : Pertama-tama saya membuat proyek Django baru yang saya beri nama 'museum_collection_management'. Hal itu dapat saya lakukan dengan 'django-admin startproject museum_collection_management. Kemudian, membuat aplikasi yang bernama main dengan syntax python manage.py startapp main. Selanjutnya, melakukan routing dan membuat model dalam aplikasi main. Lalu, pada saat membuat model, saya juga membuat atribut-atribut, seperti name, type, collection, year, amount, dan description. setiap attribut memiliki tipe-nya tersendiri. Seperti contohnya, name, collection, dan type memiliki tipe CharField. Sedangkan year dan amount memiliki tipe IntegerField. Lalu, description saya membuatnya dengan tipe TextField.
+    Pertama-tama saya membuat proyek Django baru yang saya beri nama 'museum_collection_management'. Hal itu dapat saya lakukan dengan 'django-admin startproject museum_collection_management. Kemudian, membuat aplikasi yang bernama main dengan syntax python manage.py startapp main. Selanjutnya, melakukan routing dan membuat model dalam aplikasi main. Lalu, pada saat membuat model, saya juga membuat atribut-atribut, seperti name, type, collection, year, amount, dan description. setiap attribut memiliki tipe-nya tersendiri. Seperti contohnya, name, collection, dan type memiliki tipe CharField. Sedangkan year dan amount memiliki tipe IntegerField. Lalu, description saya membuatnya dengan tipe TextField.
 
     Kemudian, membuat fungsi pada views.py pada aplikasi main yang bertujuan untuk menyimpan data yang akan digunakan di web nanti. Selanjutnya melakukan routing kembali agar dapat memetakan fungsi yang telah dibuat. Langkah yang terakhir, adalah melakukan deployment dengan menggunakan Adaptable.
 
@@ -32,3 +30,43 @@ Jawab:
     Model View-ViewModel (MVVM) merupakan sebuah pola desain untuk pengembangan perangkat lunak. Model dan View yang terdapat di MVVM ini sama saja seperti Model dan View pada MVC dan MVC. Namun, terdapat komponen baru yakni ViewModel yang digunakan untuk mengatur logika dari presentasi sebuah web agar menjadi lebih efisien.
 
     Salah satu perbedaannya, yakni dalam aspek implementasinya. MVC kerap kali digunakan pada desain software yang lebih umum. MVT dikerjakan pada framework Django. MVVM digunakan ketika sedang membuat desain yang lebih kompleks karena adanya VM yang dapat membuat logika presentasi menjadi lebih efisien. 
+
+## Tugas 3: Implementasi Form dan Data Delivery pada Django
+
+1. Apa perbedaan antara form POST dan form GET dalam Django?
+    Terdapat beberapa perbedaan antar POST dan GET pada Django. Beikut adalah perbedaan-perbedaannya:
+    * Method POST seringkali digunakan untuk mengirim data ke database. Sedangkan, method GET seringkali digunakan hanya untuk mengambil data.
+    * Ketika sebuah data dikirim menggunakan method POST, maka data tersebut tidak akan muncul di url. Namun, jika data tersebut dikirim menggunakan method GET, maka data tersebut akan muncul di url. Hal ini berkaitan dengan keamanan data pengguna.
+    * Pada method POST tidak memiliki batasan jumlah karakter yang dikirimkan. Sedangkan, pada method GET memiliki batasan jumlah karakter yang dikarenakan harus dituliskan ke url dan url memiliki batasan karakter.
+
+2. Apa perbedaan utama antara XML, JSON, dan HTML dalam konteks pengiriman data?
+    Dari segi tampilannya, 
+    * XML memiliki struktur yang lebih hierarkis, namun agak sulit untuk dibaca oleh manusia.
+    * JSON menampilkan data yang lebih ringan dan lebih mudah untuk dibaca oleh manusia maupun mesin. Hal tersebut dikarenakan JSON memiliki struktur berupa objek.
+    * HTML seringkali digunakan oleh developer untuk membuat dan merancang tampilan dari sebuah web, seperti menentukan posisi, dan sebagainya.
+
+3. Mengapa JSON sering digunakan dalam pertukaran data antara aplikasi web modern?
+    Karena JSON memiliki struktur yang lebih ringkas dan lebih mudah untuk dibaca oleh manusia. Data pada JSON juga disusun berdasarkan objeknya sehingga dapat lebih mudah untuk diidentifikasi oleh developer.
+
+4. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+    Hal pertama yang saya lakukan pastinya adalah melanjutkan proyek yang sudah saya kerjakan pada minggu sebelumnya. Kemudian, saya membuat file baru bernama `base.html` untuk membuat template file HTML yang dapat saya digunakan sebagai base untuk setiap file HTML saya. Lalu, memasukkannya pada `settings.py` dan merevisi berkas `main.html` saya. Selanjutnya, saya membuat form untuk menginput data pada berkas baru `forms.py` serta menghubungkannya denganproyek yang tengah saya buat dengan menambahkannya pada `views.py`. Pada berkas tersebut, saya membuat fungsi baru bernama `create_collection` yang akan digunakan untuk menambahkan  baru serta menambahkan syntax baru pada fungsi `show_main` (termasuk counter untuk menghitung jumlah koleksi yang ada). Hal ini akan digunakan untuk menampilkan produk tersebut.
+
+    Setelah itu, saya menambahkan path url untuk `create_collection` pada `urls.py`. Kemudian, membuat berkas HTML baru untuk menambahkan koleksi ke database. Lalu, mengubah output pada berkas `main.html` untuk bisa mengiterasi koleksi yang ada di database. Selanjutnya, membuat sebuah function baru pada `views.py` yang bertujuan untuk mengembalikan data dalam bentuk XML. Hal yang sama juga saya lakukan untuk mengembalikan data dalam bentuk JSON, serta mengakses berdasarkan ID-nya baik pada XML, maupun JSON. Terakhir, mengakses di Postman dan melakukan push ke GitHub.
+
+Akses menggunakan PostMan:
+* HTML
+<img width="250" alt="Tugas3-pbp-html 1" src="https://github.com/ErstevanAlmeida/museum-collection-management/assets/119406929/47d7488f-5320-44d3-8606-6e077e3fcef0">
+<img width="250" alt="tugas3pbphtml2" src="https://github.com/ErstevanAlmeida/lab0/assets/119406929/ab9d6b82-e727-4483-82b3-b6df094a162e">
+<img width="250" alt="tugas3pbphtml3" src="https://github.com/ErstevanAlmeida/lab0/assets/119406929/12be3371-4de9-4c9f-ba14-b17175fe8a40">
+
+* XML
+<img width="1541" alt="tugas3pbpxml" src="https://github.com/ErstevanAlmeida/lab0/assets/119406929/117d7f1f-e8bc-4767-b4e6-2bd59baf4608">
+
+* JSON
+<img width="1541" alt="tugas3pbpjson" src="https://github.com/ErstevanAlmeida/lab0/assets/119406929/f13104eb-b632-4459-b455-e0982741cbac">
+
+* XML by ID
+<img width="1514" alt="tugas3pbpxmlid" src="https://github.com/ErstevanAlmeida/lab0/assets/119406929/9f27ae8c-3253-450a-ae1b-b5c0d9db7469">
+
+* JSON by ID
+<img width="1543" alt="tugas3pbpjsonid" src="https://github.com/ErstevanAlmeida/lab0/assets/119406929/41e17e74-86b5-4895-a9a1-8c26a94c05d9">

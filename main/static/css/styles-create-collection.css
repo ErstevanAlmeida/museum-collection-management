@@ -1,0 +1,19 @@
+/* styles-create-collection.css */
+.title-page {
+    text-align: center;
+    background-color: #fbdc3f ;
+    color: #190919;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+form {
+    background-color: #e6d062 ;
+    color: #190919;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
