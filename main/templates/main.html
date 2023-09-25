@@ -43,7 +43,7 @@
 
     <br />
 
-    <h5>Last login session: {{ last_login }}</h5>
+    <!-- <h5>Last login session: {{ last_login }}</h5> -->
 
     <a href="{% url 'main:create_product' %}">
         <button>
@@ -51,10 +51,12 @@
         </button>
     </a>
 
-    <a href="{% url 'main:logout' %}"></a>
+    <a href="{% url 'main:logout' %}">
         <button>
             Logout
         </button>
+    </a>
+
 </div>
     
 {% endblock content %}
