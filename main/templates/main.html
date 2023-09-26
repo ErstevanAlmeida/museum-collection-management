@@ -17,6 +17,7 @@
 </div>
 
 <div class="body-page">
+    <br>
     <h3>There are {{ collection_count }} collection in DS Museum</h3>
     <table border="1">
         <thead>
@@ -41,9 +42,8 @@
         </tbody>
     </table>
 
-    <br />
-
-    <!-- <h5>Last login session: {{ last_login }}</h5> -->
+    <h5>Admin: {{ account }}</h5>
+    <h5>Last login session: {{ last_login }}</h5>
 
     <a href="{% url 'main:create_product' %}">
         <button>

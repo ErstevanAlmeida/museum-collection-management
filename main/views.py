@@ -23,6 +23,7 @@ def show_main(request):
         'products': collection,
         'collection_count': collection_count,
         'last_login': request.COOKIES.get('last_login'),
+        'account' : request.user.username,
     }
 
     return render(request, "main.html", context)
@@ -76,7 +77,7 @@ def login_user(request):
             login(request, user)
             response = HttpResponseRedirect(reverse("main:show_main"))
             response.set_cookie('last_login', str(datetime.datetime.now()))
-            return redirect('main:show_main')
+            return response
         else:
             messages.info(request, 'Sorry, incorrect username or password. Please try again.')
     context = {}
@@ -86,4 +87,4 @@ def logout_user(request):
     logout(request)
     response = HttpResponseRedirect(reverse('main:login'))
     response.delete_cookie('last_login')
-    return redirect('main:login')
+    return response

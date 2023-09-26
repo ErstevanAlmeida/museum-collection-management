@@ -1,17 +1,18 @@
 /* styles-main.css */
-.title-page{
-    text-align: center;
-    background-color: #fbdc3f ;
+
+body {
+    background-color: #93CCEA;
     color: #190919;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.body-page {
-    background-color: white;
-    color: black;
+.title-page {
+    text-align: center;
+    background-color: #f8e068;
+    color: #190919;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 h4 {
@@ -25,10 +26,11 @@ table {
 }
 
 button {
-    background-color: white;
+    background-color: #f8e068;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 20px;
+    border-color: #ddc862;
 }
 
