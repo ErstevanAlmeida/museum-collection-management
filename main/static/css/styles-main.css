@@ -23,6 +23,7 @@ table {
     text-align: center;
     width: 100%;
     border-color: black;
+    font-weight: bold;
 }
 
 button {
