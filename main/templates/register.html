@@ -3,8 +3,7 @@
 {% load static %}
 
 {% block meta %}
-<title>Register</title>
-<link rel="stylesheet" type="text/css" href="{% static 'css/styles-register.css' %}">
+<title>{{ apps_name }}</title>
 {% endblock meta %}
 
 {% block content %}
@@ -37,5 +36,7 @@
     </div>
 
 </div>
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/styles-register.css' %}">
 
 {% endblock content %}

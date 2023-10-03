@@ -88,3 +88,19 @@ def logout_user(request):
     response = HttpResponseRedirect(reverse('main:login'))
     response.delete_cookie('last_login')
     return response
+
+def edit_collection(request, id):
+    collection = Product.objects.get(pk = id)
+    form = NewCollectionForm(request.POST or None, instance=collection)
+
+    if form.is_valid() and request.method == "POST":
+        form.save()
+        return HttpResponseRedirect(reverse('main:show_main'))
+    
+    context = {'form':form}
+    return render(request, "edit_collection.html", context)
+
+def delete_collection(request, id):
+    collection = Product.objects.get(pk=id)
+    collection.delete()
+    return HttpResponseRedirect(reverse('main:show_main'))
