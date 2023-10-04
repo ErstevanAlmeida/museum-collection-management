@@ -147,11 +147,14 @@ Akses menggunakan PostMan:
     : `<button>` : tag untuk membuat button / tombol.
     : `<form>` : tag untuk membuat form.
 
-3. Jelaskan perbedaan antara *framework* CSS Tailwind dan Bootstrap! Kapan sebaiknya kita menggunakan Bootstrap daripada Tailwind, dan sebaliknya?
+3. Jelaskan perbedaan antara *margin* dan *padding*!
+    : *Margin* merupakan dua properti pada CSS yang digunakan untuk mengatur ruang di sekitar element HTML. Padding digunakan untuk mengatur ruang di sekitar konten elemen, menentukan jarak antara konten elemen serta batasannya. Sedangkan, *margin* digunakan untuk mengatur ruang di luar elemen dan digunakan untuk mengatur jarak antar satu elemen dengan elemen lainnya.
+
+4. Jelaskan perbedaan antara *framework* CSS Tailwind dan Bootstrap! Kapan sebaiknya kita menggunakan Bootstrap daripada Tailwind, dan sebaliknya?
     : Tailwind merupakan kerangka kerja yang dapat memberikan kendali penuh secara detail pada desain. Sedangkan, Bootstrap merupakan kerangka kerja yang menyediakan komponen-komponen tertentu, seperti navbar, kartu, dan sebagainya.
     : Sebaiknya menggunakan Bootstrap ketika ingin mengembangkan prototipe cepat dan lebih memilih pengaturan bawaan yang bagus. Sedangkan, jika kita ingin mengatur *styling* website secara lebih detail dan rinci, maka kita sebaiknya menggunakan Tailwind.
 
-4. Jelaskan bagaimana cara kamu mengimplementasikan *checklist* di atas secara *step-by-step*!
+5. Jelaskan bagaimana cara kamu mengimplementasikan *checklist* di atas secara *step-by-step*!
     : Pada tugas-tugas sebelumnya saya memang sudah menerapkan CSS pada website saya. Mulai dari warna background, warna tulisan, hingga tata letak item-item yang telah saya buat. Di sini, saya menerapkan CSS dengan menggunakan static files dari Django. Saya juga membedakan *styling* untuk setiap halamannya dengan CSS file yang berbeda. Kustomisasi ini tidak hanya pada halaman utama saja, namun pada halaman0halam lainnya seperti login, register, dan create collection.
     : Pada tugas-tugas sebelumnya, saya menggunakan tabel untuk menyajikan data yang telah dibuat. Namun, pada tugas kali ini saya mencoba untuk menyajikan data tersebut dengan pendekatan lain. Pendekatan yang saya gunakan adalah dengan menggunakan kartu. Bukan hanya kartu biasa, melainkan saya juga membuat kartu tersebut bisa membalikkan kartunya jika klik pada item tersebut dengan memberikan sedikit sentuhan JavaScript pada kartu tersebut. Pada bagian belakang kartu saya menyajikan deskripsi dari item dan tombol untuk edit dan delete. Sedangkan, pada bagian depan kartu menyajikan variabel-variabel lainnya.
     : Kemudian, untuk mengerjakan bonusnya saya juga melakukan *styling*-nya dengan CSS saja. Saya melakukannya dengan menambahkan kode berikut.
