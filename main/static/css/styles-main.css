@@ -27,7 +27,6 @@ button {
     font-size: 15px;
     border-color: #ddc862;
     color: #0B7284;
-    ;
 }
 
 .container {
@@ -102,4 +101,22 @@ button {
 
 .collection-card.flipped {
     transform: rotateY(180deg);
+}
+
+.btn-add {
+    display: flexbox;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.login-info p {
+    display: flexbox;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding: 0px;
+    margin: 0px;
+    font-size: 15px;
+    font-weight: bold;
 }

@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% load static%}
+{% load static %}
 
 {% block meta %}
 <title>{{ apps_name }}</title>
@@ -43,25 +43,27 @@
             </div>            
         {% endfor %}
     </div>
+    
+    <div>
 
-    <h5>Admin: {{ account }}</h5>
-    <h5>Last login session: {{ last_login }}</h5>
-
-    <a href="{% url 'main:create_product' %}">
-        <button>
+    </div>
+    <a id="btn-add" href="{% url 'main:create_product' %}">
+        <button class="btn-add">
             Add New Collection
         </button>
     </a>
 
-    <a href="{% url 'main:logout' %}">
-        <button>
-            Logout
-        </button>
-    </a>
+    <div class="login-info">
+        <p>
+            You are logged in as : {{ account }} (<a href="{% url 'main:logout' %}">Logout</a>)
+        </p>
+
+        <p>Last login session: {{ last_login }}</p>   
+    </div>
 
 </div>
     
-<link rel="stylesheet" type="text/css" href="{% static 'css/styles-main.css' %}" defer>
+<link rel="stylesheet" type="text/css" href="{% static 'css/styles-main.css' %}">
 <script src="{% static 'js/styles-main.js' %}" defer></script>
 
 {% endblock content %}
