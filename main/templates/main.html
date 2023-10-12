@@ -8,64 +8,92 @@
 
 {% block content %}
 <div class="title-page">
-    <h1 class="title-h1">DS Museum Collections</h1>
-    <h4>Name    : {{ name }}</h4>
-    <h4>NPM     : {{ npm }}</h4>
-    <h4>Class   : {{ class }}</h4>
-    <br>
+    <h1 class="title-h1">DS Museum Collections</h1>    
 </div>
 
 <div class="body-page">
     <br>
-    <h3>There are {{ collection_count }} collection in DS Museum</h3>
-    <div class="container">
-        {% for product in products %}
-            <div class="collection collection{{ product.pk }}">
-                <div class="collection-card">
-                    <div class="collection-front">
-                        <div class="collection-name">
-                            <p>{{ product.collection }}</p>
-                        </div>
-                        <p>Type: {{ product.type }}</p>
-                        <p>Amount: {{ product.amount }}</p>
-                        <p>Year Invented: {{ product.year }}</p>
-                    </div>
-                    <div class="collection-back">
-                        <p>{{ product.description }}</p>
-                        <a href="{% url 'main:edit_collection' product.pk %}">
-                            <button>Edit</button>
-                        </a>
-                        <a href="{% url 'main:delete_collection' product.pk %}">
-                            <button>Delete</button>
-                        </a>
-                    </div>
-                </div>
-            </div>            
+    <div class="total-collection-info">
+        <h3>There are {{ collection_count }} collection in DS Museum</h3>
+    </div>
+    <div class="container" id="collection-card">
+        {% for collection in products %}
+            <script>
+                window.editCollectionUrl = "{% url 'main:edit_collection' collection.pk %}";
+                window.deleteCollectionUrl = "{% url 'main:delete_collection' collection.pk %}";
+            </script>
         {% endfor %}
     </div>
-    
-    <div>
 
+    <button type="button" class="btn btn-primary" id="openModalBtn">Add Collection</button>
+
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title">New Collection</h1>
+            </div>
+            <div class="modal-body">
+                <form id="form">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="collection" class="col-form-label">Collection Name:</label>
+                        <input type="text" class="form-control" id="collection" name="collection">
+                    </div>
+                    <div class="mb-3">
+                        <label for="type" class="col-form-label">Type:</label>
+                        <input type="text" class="form-control" id="type" name="type">
+                    </div>
+                    <div class="mb-3">
+                        <label for="amount" class="col-form-label">Amount:</label>
+                        <input type="number" class="form-control" id="amount" name="amount">
+                    </div>
+                    <div class="mb-3">
+                        <label for="year" class="col-form-label">Year Invented:</label>
+                        <input type="number" class="form-control" id="year" name="year">
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="col-form-label">Description:</label>
+                        <textarea class="form-control" id="description" name="description" id="" cols="30" rows="10"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="closeModalBtn">Close</button>
+                <button type="button" class="btn btn-primary" id="button-add">Add Collection</button>
+            </div>
+        </div>
     </div>
-    <a id="btn-add" href="{% url 'main:create_product' %}">
-        <button class="btn-add">
-            Add New Collection
-        </button>
-    </a>
+
+    <br>
+
+    <br>
 
     <div class="login-info">
         <p>
-            You are logged in as : {{ account }} (<a href="{% url 'main:logout' %}">Logout</a>)
+            You are logged in as : {{ account }} (<a href="{% url 'main:logout' %}">logout</a>)
         </p>
 
         <p>Last login session: {{ last_login }}</p>   
     </div>
 
+    <br>
+
+    <br>
+
+    <div class="dropdown">
+        <button class="dropbtn">Project Info</button>
+        <br>
+        <br>
+        <div class="dropdown-content">
+            <h4>Made by,</h4>
+            <h4>Name    : {{ name }}</h4>
+            <h4>NPM     : {{ npm }}</h4>
+            <h4>Class   : {{ class }}</h4>
+        </div>
+    </div>
+
 </div>
     
-<link rel="stylesheet" type="text/css" href="{% static 'css/styles-main.css' %}">
-<script src="{% static 'js/styles-main.js' %}" defer></script>
-
+<link rel="stylesheet" type="text/css" href="{% static 'css/styles-main.css' %}" onload="this.onload=null;this.rel='stylesheet'">
+<script src="{% static 'js/script-main.js' %}"></script>
 {% endblock content %}
-
-<!-- {% url 'main:logout' %} -->

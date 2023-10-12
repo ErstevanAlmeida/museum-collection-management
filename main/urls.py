@@ -1,5 +1,7 @@
 from django.urls import path
-from main.views import show_main, create_collection, show_xml, show_json, show_xml_by_id, show_json_by_id, register, login_user, logout_user, edit_collection, delete_collection
+from main.views import show_main, create_collection, show_xml, show_json, show_xml_by_id
+from main.views import show_json_by_id, register, login_user, logout_user, edit_collection
+from main.views import delete_collection, get_collection_json, add_collection_ajax
 
 app_name = 'main'
 
@@ -15,4 +17,6 @@ urlpatterns = [
     path('logout/', logout_user, name='logout'),
     path('edit-collection/<int:id>', edit_collection, name="edit_collection"),
     path('delete-collection/<int:id>', delete_collection, name='delete_collection'),
+    path('get-collection/', get_collection_json, name='get_collection_json'),
+    path('create-new-collection-ajax/', add_collection_ajax, name='add_collection_ajax'),
 ]

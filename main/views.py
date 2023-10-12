@@ -6,6 +6,7 @@ from django.core import serializers
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render, redirect
 from django.urls import reverse
+from django.views.decorators.csrf import csrf_exempt
 from main.forms import NewCollectionForm
 from main.models import Product
 import datetime
@@ -104,3 +105,24 @@ def delete_collection(request, id):
     collection = Product.objects.get(pk=id)
     collection.delete()
     return HttpResponseRedirect(reverse('main:show_main'))
+
+def get_collection_json(request):
+    collection = Product.objects.filter(user=request.user)
+    return HttpResponse(serializers.serialize('json', collection))
+
+@csrf_exempt
+def add_collection_ajax(request):
+    if request.method == 'POST':
+        collection = request.POST.get("collection")
+        type = request.POST.get("type")
+        amount = request.POST.get("amount")
+        year = request.POST.get("year")
+        description = request.POST.get("description")
+        user = request.user
+
+        new_collection = Product(collection=collection, type=type, amount=amount, year=year, description=description, user=user)
+        new_collection.save()
+
+        return HttpResponse(b"CREATED", status=201)
+    
+    return HttpResponseNotFound()

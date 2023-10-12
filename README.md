@@ -2,15 +2,17 @@
 ## NPM     : 2206082493
 ## Kelas   : PBP - E
 
+<hr>
+
 ## Tugas 2 : Implementasi MVT pada Django
 
 - [x] Membuat sebuah proyek Django baru.
 - [x] Membuat aplikasi dengan nama main pada proyek tersebut.
 - [x] Melakukan routing pada proyek agar dapat menjalankan aplikasi main.
 - [x] Membuat model pada aplikasi main dengan nama Item dan memiliki atribut wajib sebagai berikut.
-- name sebagai nama item dengan tipe CharField.
-- amount sebagai jumlah item dengan tipe IntegerField.
-- description sebagai deskripsi item dengan tipe TextField.
+    - name sebagai nama item dengan tipe CharField.
+    - amount sebagai jumlah item dengan tipe IntegerField.
+    - description sebagai deskripsi item dengan tipe TextField.
 - [x] Membuat sebuah fungsi pada views.py untuk dikembalikan ke dalam sebuah template HTML yang menampilkan nama aplikasi serta nama dan kelas kamu.
 - [x] Membuat sebuah routing pada urls.py aplikasi main untuk memetakan fungsi yang telah dibuat pada views.py.
 - [x] Melakukan deployment ke Adaptable terhadap aplikasi yang sudah dibuat sehingga nantinya dapat diakses oleh teman-temanmu melalui Internet.
@@ -41,6 +43,8 @@ Jawab:
     : Model View-ViewModel (MVVM) merupakan sebuah pola desain untuk pengembangan perangkat lunak. Model dan View yang terdapat di MVVM ini sama saja seperti Model dan View pada MVC dan MVC. Namun, terdapat komponen baru yakni ViewModel yang digunakan untuk mengatur logika dari presentasi sebuah web agar menjadi lebih efisien.
 
     : Salah satu perbedaannya, yakni dalam aspek implementasinya. MVC kerap kali digunakan pada desain software yang lebih umum. MVT dikerjakan pada framework Django. MVVM digunakan ketika sedang membuat desain yang lebih kompleks karena adanya VM yang dapat membuat logika presentasi menjadi lebih efisien. 
+
+<hr>
 
 ## Tugas 3: Implementasi Form dan Data Delivery pada Django
 
@@ -86,6 +90,8 @@ Akses menggunakan PostMan:
 * JSON by ID
 <img width="1543" alt="tugas3pbpjsonid" src="https://github.com/ErstevanAlmeida/lab0/assets/119406929/41e17e74-86b5-4895-a9a1-8c26a94c05d9">
 
+<hr>
+
 ## Tugas 4 : Implementasi Autentikasi, Session, dan Cookies pada Django
 
 - [x] Mengimplementasikan fungsi registrasi, login, dan logout untuk memungkinkan pengguna untuk mengakses aplikasi sebelumnya dengan lancar.
@@ -119,6 +125,8 @@ Akses menggunakan PostMan:
     : Kemudian pada login, saya juga membuat fungsi loginnnya terlebih dahulu. Lalu, membuat file HTML baru dan mengimplemetasikan fungsi tersebut serta menruhnya pada `urls.py`. Saya juga membuat fungsi logout yang akan mengembalikan ke halaman login dari website tersebut.
 
     : Selanjutnya, saya membuat akun dan memasukkan data pada create collection site. Kemudian, menghubungkan collection yang saya punya dengan user agar user yang dapat melihat hanya user yang login pada akun tersebut. Terakhir, menampilkan nama akun dan sesi terakhir login pada file HTML halaman utama. 
+
+<hr>
 
 ## Tugas 5 : Desain Web menggunakan HTML, CSS dan Framework CSS
 
@@ -160,3 +168,37 @@ Akses menggunakan PostMan:
     : Kemudian, untuk mengerjakan bonusnya saya juga melakukan *styling*-nya dengan CSS saja. Saya melakukannya dengan menambahkan kode berikut.
     `.collection:last-child .collection-card { color: #1062C6; }`
     : Dengan menambahkan `last-child`, kita mengidentifikasi item yang dimaksud adalah item / baris terakhir dari list itemnya.
+
+<hr>
+
+## Tugas 6: JavaScript dan Asynchronous JavaScript
+
+- [x] Mengubah tugas 5 yang telah dibuat sebelumnya menjadi menggunakan AJAX.
+    - [x] AJAX GET
+        - [x] Ubahlah kode cards data item agar dapat mendukung AJAX GET.
+        - [x] Lakukan pengambilan task menggunakan AJAX GET.
+    - [x] AJAX POST
+        - [x] Buatlah sebuah tombol yang membuka sebuah modal dengan form untuk menambahkan item.
+        > Modal di-trigger dengan menekan suatu tombol pada halaman utama. Saat penambahan item berhasil, modal harus ditutup dan input form harus dibersihkan dari data yang sudah dimasukkan ke dalam form sebelumnya.
+        - [x]  Buatlah fungsi view baru untuk menambahkan item baru ke dalam basis data.
+        - [x] Buatlah path /create-ajax/ yang mengarah ke fungsi view yang baru kamu buat.
+        - [x] Hubungkan form yang telah kamu buat di dalam modal kamu ke path /create-ajax/.
+        - [x] Lakukan refresh pada halaman utama secara asinkronus untuk menampilkan daftar item terbaru tanpa reload halaman utama secara keseluruhan.
+
+- [x] Melakukan perintah collectstatic.
+    - Perintah ini bertujuan untuk mengumpulkan file static dari setiap aplikasi kamu ke dalam suatu folder yang dapat dengan mudah disajikan pada produksi.
+
+1. Jelaskan perbedaan antara asynchronous programming dengan synchronous programming.
+    : Pada *asynchronus programming* tugas-tugas dapat dijalankan langsung secara bersamaan tanpa harus menunggu tugas lainnya. Sedangkan, pada *synchronus programming* tugas-tugas akan dijalankan secara sekuensial atau dengan kata lain, tugas dijalankan satu persatu dan harus menunggu tugas-tugas lainnya.
+2. Dalam penerapan JavaScript dan AJAX, terdapat penerapan paradigma event-driven programming. Jelaskan maksud dari paradigma tersebut dan sebutkan salah satu contoh penerapannya pada tugas ini.
+    : *Event-driven programming* merupakan sebuah paradigma yang akan menjalankan tugas tersebut berdasarkan peristiwa atau kejadian yang terjadi pada sistem. Paradigma ini merupakan hasil atau respon dari peristiwa yang dilakukan pada suatu program.
+    : Contohnya pada tugas ini adalah ketika *user* menekan tombol `Add Product` pada modal yang telah saya tuliskan di `script-main.js`. Bahkan, di file tersebut juga terdapat beberapa contoh lain dari paradigma ini yang disebutkan secara jelas dengan adanya *syntax* `addEventListener()`.
+3. Jelaskan penerapan asynchronous programming pada AJAX.
+    : Dengan adanya *asynchronus programming* yang diterapkan pada AJAX, aplikasi dapat membuat request ke server. Hal ini memungkinkan AJAX dapat melanjutkan eksekusi kode JavaScript lainnya, tanpa harus menunggu respons.
+    : Contoh penerapannya adalah pada `await fetch()`, `await` berfungsi untuk menunggu respons dari web. Namun, program lainnya yang ada di dalam fungsi yang sama akantetap dapat dijalankan secara bersamaan.
+4. Pada PBP kali ini, penerapan AJAX dilakukan dengan menggunakan Fetch API daripada library jQuery. Bandingkanlah kedua teknologi tersebut dan tuliskan pendapat kamu teknologi manakah yang lebih baik untuk digunakan.
+    : Fetch API merupakan bagian dari JavaScript dan didukung oleh semua browser modern serta dapat memudahkan dalam mengelola kode yang bersifat *asynchronus*. Pada Fecth API juga memiliki sintaks yang lebih simpel dan lebih mudah dalam membacanya jika dibandingkan dengan jQuery. Sedangkan, jQuery adalah library eksternal JavaScript yang perlu diimpor. Namun, jQuery dirancang untuk dapat dijalankan di berbagai macam browser, bahkan browser yang lebih lama.
+    : Menurut saya sendiri, saya lebih memilih untuk menggunakan Fetch API. Hal tersebut dikarenakan Fetch API merupakan bagian dari JavaScript modern. Hal ini juga disebabkan oleh adanya kemajuan teknologi sehingga dapat dijadikan pilihan yang tepat dalam mengembangkan web yang lebih modern. Selain itu, Fetch API juga memiliki sintaks yang lebih simpel.
+5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+    : Pertama-tama, membuat fungsi `get_collection` pada file `views.py`. Kemudian, menambahkan routing untuk fungsi tersebut pada file `urls.py`. Selanjutnya, saya memodifikasi file `script-main.js` saya agar dapat mengambil data-data dengan fungsi `getCollections()` dan menaruhnya pada cards yang telah dibuat.
+    : Lalu, saya membuat tombol yang dapat membuka sebuah modal untuk menambahkan koleksi pada museum. Selanjutnya, saya membuat fungsi `add_collection_ajax` pada file `views.py` dan menambahkan routingnya pada `urls.py`. Kemudian, membuat modal pada file `main.html` dan menghubungkan form dengan fungsi `add_collection_ajax`-nya. Lalu, menambahkannya di file `script-main.js` pada fungsi `addCollection()` dengan menggunakan method `POST`. Setelah semua selesai, saya melakukan kostumisasi pada file css saya. Terakhir, saya melakukan collectstatic dengan mengetik `python3 manage.py collectstatic`.
