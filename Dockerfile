@@ -30,4 +30,3 @@ USER django
 
 # Run application
 # CMD gunicorn museum_collection_management.wsgi:application
-# test
